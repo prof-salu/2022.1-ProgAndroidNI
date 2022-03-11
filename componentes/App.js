@@ -1,21 +1,24 @@
-import React from "react"; 
-import { StyleSheet, Text, Button, TextInput, View, Image } from "react-native";
-import Mensagem from "./classes/Mensagem";
-import BotaoEspecial from "./classes/BotaoEspecial";
+import React from 'react';
+import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
+import Mensagem from './classes/Mensagem';
+import MeuBotao from './classes/MeuBotao';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 40, margin: 4, }}>Texto estático!</Text>
+      <Text style={styles.texto}>Texto estático!!!</Text>
+      <TextInput placeholder='Entrada de dados' keyboardType='numeric'/>
+      <Button title='Sou um botão!' color={'green'}/>
+      <Image style={styles.imagem} source={require('./assets/favicon.png')}/> 
+      {/*COMENTARIO REACT*/}
+      <Text style={{fontSize: 30, color: 'blue', fontWeight: 'bolder'}}>Novo texto!</Text>
 
-      <TextInput placeholder="Entrada de dados" style={styles.entrada} keyboardType='numeric'/>
+      <Mensagem texto='Aula de Desenvolvimento Mobile'/>
+      <Mensagem texto='Prof. Salustiano Oliveira'/>
+      <Mensagem texto='Aula 04'/>
+     
+      <MeuBotao msg='Clique aqui'></MeuBotao>
 
-      <Button title="Sou um botão" color={'red'} />
-
-      <Image source={require("./assets/favicon.png")} style={styles.imagem} /> 
-      {/*
-      <Mensagem mensagem="Aprendendo React Native" />
-      <BotaoEspecial msgBotao="Botão estilizado"></BotaoEspecial>*/}
     </View>
   );
 }
@@ -23,19 +26,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-
   imagem: {
     width: 48,
     height: 48,
-    margin: 4,
-  },
-  entrada: {
+    marginTop: 10,
+  }, 
+  texto: {
     fontSize: 40,
-    textAlign: "center",
-    margin: 4,
-  },
+    margin: 10,
+    color: 'red',
+  }
 });

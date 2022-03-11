@@ -1,28 +1,30 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { StyleSheet } from "react-native";
+import {View, Text, StyleSheet} from "react-native";
 
-class Mensagem extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text style={{textTransform:'uppercase'}}>Aula de desenvolvimento Mobile</Text>
-        <Text style={estilos.texto}>{this.props.mensagem}</Text>
-      </View>
-    );
-  }
+class Mensagem extends React.Component{
+    render(){
+        return(
+            <View>
+                <Text style={estilos.texto}>{this.props.texto}</Text>
+            </View>
+        );
+    }
 }
 
 const estilos = StyleSheet.create({
-  texto: {
-    fontSize: 18,
-    fontWeight: "bold",
-    borderWidth: 2,
-    borderColor: "blue",
-    padding: 10,
-    marginBottom: 5,
-    backgroundColor: "#ff1",
-  },
+    texto:{
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: 'brown',
+        margin: 10,
+        backgroundColor: '#ff1',
+        borderWidth: 2,
+        padding: 5,
+    }
 });
+
+// O componente MeuBotao deve possuir a cor vermelha
+// E o seu titulo deverá ser definido 
+// via propriedade na classe que o chamar
 
 export default Mensagem;
