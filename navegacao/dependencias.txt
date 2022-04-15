@@ -1,0 +1,12 @@
+--Executar os comandos abaixo na pasta do projeto
+    npm install @react-navigation/native
+    expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+--Navegação Lateral
+    npm install --save @react-navigation/drawer
+
+-- Navegação Links
+    npm install --save @react-navigation/stack
+
+-- Navegação por abas
+    npm install @react-navigation/bottom-tabs
