@@ -1,13 +1,23 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { StyleSheet,  Text, View, TouchableOpacity, FlatList} from 'react-native';
 
 import {useNavigation} from '@react-navigation/native';
+import { ListaContatos } from './Lista';
 
 export default function Home(){
+    const {agenda} = useContext(ListaContatos);
     const navigation = useNavigation();
 
     return(
         <View style={styles.container}>
+            <FlatList
+                style={styles.lista}
+                data={agenda}
+                renderItem={({ item }) => (
+                    <Text style={styles.item}>{'[' + item.nome + '] - ' + item.tel}</Text>
+                )}
+            />
+
             <TouchableOpacity 
             style= {styles.floatButton}
             onPress={() => navigation.navigate('Formulario')}>
@@ -39,5 +49,11 @@ const styles = StyleSheet.create({
     textoBotao: {
         fontSize: 30,
         color: 'white',
+    },
+    lista:{
+        marginTop: 35,
+    },
+    item: {
+        marginBottom: 10,
     }
 });
