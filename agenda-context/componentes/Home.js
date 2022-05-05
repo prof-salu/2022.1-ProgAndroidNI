@@ -14,7 +14,9 @@ export default function Home(){
                 style={styles.lista}
                 data={agenda}
                 renderItem={({ item }) => (
-                    <Text style={styles.item}>{'[' + item.nome + '] - ' + item.tel}</Text>
+                    <Text style={styles.item}>{
+                        (item.nome != '' && item.tel != '')?'[' + item.nome + '] - ' + item.tel:''
+                        }</Text>
                 )}
             />
 

@@ -1,18 +1,24 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { StyleSheet, TextInput, Text, View, TouchableOpacity} from 'react-native';
 
 import {useNavigation} from '@react-navigation/native';
+import { ListaContatos } from './Lista';
 
 export default function Formulario(){
     const navigation = useNavigation();
     const [inputNome, setInputNome] = useState('');
     const [inputTel, setInputTel] = useState('');
 
+    const {agenda} = useContext(ListaContatos);
+    const {addContato} = useContext(ListaContatos);
+
     function novoContato(){
         if(inputNome == '' || inputTel == ''){
             alert('Os campos devem estar preenchidos');
             return;
         }
+         
+        addContato(agenda, inputNome, inputTel);
 
         navigation.navigate('Home');
     }
